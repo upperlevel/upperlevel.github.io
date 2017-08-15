@@ -16,7 +16,7 @@ img
 
 body
   background-color: black
-  overflow: hidden
+  overflow-x: hidden
 
 
 @keyframes separator_join
@@ -31,8 +31,6 @@ body
   background-color: white
   animation-name: separator_join
   animation-duration: 1.5s
-
-// ------------------------------------- HEADER
 
 .nav
   width: 100%
@@ -50,25 +48,20 @@ body
 .nav_entry:hover
   text-decoration: underline
 
-// ------------------------------------- BODY
-
-div.body_container
+.main
   width: 100%
-  height: 100%
-  position: fixed
+  height: 61%
+  padding-top: 6%
   text-align: center
 
-// ------------------------------------- TITLE
-
 .title_section
-  padding-top: 6%
   padding-bottom: 2%
 
-  .title
-    font-size: 76px
+.title
+  font-size: 76px
 
-  .motto
-    font-size: 30px
+.motto
+  font-size: 30px
 
 @keyframes logo_join
   from
@@ -80,9 +73,6 @@ div.body_container
   animation-name: logo_join
   animation-duration: 1.5s
 
-
-// ------------------------------------- DEV
-
 .dev_section
   font-size: 30px
 
@@ -90,38 +80,33 @@ div.body_container
   padding-top: 1%
   padding-bottom: 1%
 
+.dev_list
+  padding-top: 5px
+  padding-bottom: 10px
+
 .dev
   display: inline-block
-  padding-bottom: 1%
   text-align: center
   font-size: 10px
   margin-left: 5px
   margin-right: 5px
 
-  .dev_avatar
-    border-radius: 30px
-    width: 72px
-    height: 72px
+.dev_avatar
+  border-radius: 30px
+  width: 72px
+  height: 72px
 
-  .dev_desc
-    padding-top: 5%
-    font-size: 15px
-
-// ------------------------------------- FOOTER
+.dev_desc
+  padding-top: 5%
+  font-size: 15px
 
 .footer
   width: 100%
+  height: 120px
   bottom: 0
-  padding-right: 20px
-  position: absolute
+  position: fixed
+  overflow: hidden
 
-// ------------------------------------- FOOTER SEPARATOR
-
-.footer_separator
-  @extend .separator
-  bottom: 0
-
-// ------------------------------------- CONTACTS INTRO
 @keyframes contact_intro_join
   from
     transform: translateX(-100%)
@@ -135,7 +120,6 @@ div.body_container
   animation-name: contact_intro_join
   animation-duration: 2s
 
-// ------------------------------------- CONTACTS
 .contacts
   width: 100%
   text-align: right
@@ -156,7 +140,7 @@ $contact_side: 60px
   text-align: center
   border-radius: $contact_side / 2
   background-color: white
-  /* animation */
+
   animation-name: contact_join
   animation-duration: 2s
 
@@ -169,11 +153,9 @@ $contact_side: 60px
   height: $contact_side - 20px
   margin-top: 9px
 
-// ------------------------------------- AUTHOR
-
 .author
   width: 100%
   padding-left: 20px
   text-align: center
   font-size: 14px
-  padding-bottom: 10px
+  padding-bottom: 1px
