@@ -8,11 +8,43 @@
   font-weight: 300;
   user-select: none; }
 
+a {
+  text-decoration: none; }
+
 img {
-  pointer-events: none; }
+  -webkit-user-drag: none; }
 
 body {
-  background-color: black; }
+  background-color: black;
+  overflow: hidden; }
+
+@keyframes separator_join {
+  from {
+    transform: translateX(100%); }
+  to {
+    transform: translateX(0); } }
+.separator, .footer_separator {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  animation-name: separator_join;
+  animation-duration: 1.5s; }
+
+.nav {
+  width: 100%;
+  height: 100px;
+  text-align: left; }
+
+.nav_entry {
+  display: inline-block;
+  width: 150px;
+  height: 100%;
+  line-height: 98px;
+  text-align: center;
+  font-size: 20px; }
+
+.nav_entry:hover {
+  text-decoration: underline; }
 
 div.body_container {
   width: 100%;
@@ -20,20 +52,27 @@ div.body_container {
   position: fixed;
   text-align: center; }
 
-/* title section */
-div.title_section {
-  padding-top: 10%;
+.title_section {
+  padding-top: 6%;
   padding-bottom: 2%; }
-  div.title_section .title {
+  .title_section .title {
     font-size: 76px; }
-  div.title_section .motto {
+  .title_section .motto {
     font-size: 30px; }
 
-/* dev section */
-div.dev_section {
+@keyframes logo_join {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(-360deg); } }
+.logo {
+  animation-name: logo_join;
+  animation-duration: 1.5s; }
+
+.dev_section {
   font-size: 30px; }
 
-div.dev_intro {
+.dev_intro {
   padding-top: 1%;
   padding-bottom: 1%; }
 
@@ -52,11 +91,61 @@ div.dev_intro {
     padding-top: 5%;
     font-size: 15px; }
 
+.footer {
+  width: 100%;
+  bottom: 0;
+  padding-right: 20px;
+  position: absolute; }
+
+.footer_separator {
+  bottom: 0; }
+
+@keyframes contact_intro_join {
+  from {
+    transform: translateX(-100%); }
+  to {
+    transform: translateX(0); } }
+.contacts_intro {
+  padding: 10px 30px 10px 0;
+  text-align: right;
+  animation-name: contact_intro_join;
+  animation-duration: 2s; }
+
 .contacts {
   width: 100%;
-  height: 50px;
-  padding-top: 25px;
-  position: absolute;
-  bottom: 0; }
+  text-align: right; }
+
+@keyframes contact_join {
+  from {
+    transform: translateY(100px); }
+  to {
+    transform: translateY(0); } }
+.contact {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  text-align: center;
+  border-radius: 30px;
+  background-color: white;
+  /* animation */
+  animation-name: contact_join;
+  animation-duration: 2s; }
+
+.contact:hover {
+  box-shadow: 0 0 11px white;
+  transition: box-shadow 0.2s; }
+
+.contact_avatar {
+  width: 40px;
+  height: 40px;
+  margin-top: 9px; }
+
+.author {
+  width: 100%;
+  padding-left: 20px;
+  text-align: center;
+  font-size: 14px;
+  padding-bottom: 10px; }
 
 /*# sourceMappingURL=style.css.map */
