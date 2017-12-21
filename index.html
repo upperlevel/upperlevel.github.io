@@ -2,85 +2,106 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script>
+        function httpGet(url, callback) {
+            var http = new XMLHttpRequest();
+            http.onreadystatechange = function () {
+                if (http.readyState === 4 && http.status === 200) {
+                    callback(http.responseText);
+                }
+            };
+            http.open("GET", url, true);
+            http.send();
+        }
+    </script>
 </head>
 <body>
-    <!-- nav -->
-    <div class="nav">
-        <a href="index.html">
-            <div class="nav_entry">Home</div>
+<!-- Nav -->
+<div class="nav">
+    <a href="index.html">
+        <div class="nav-entry">
+            Home
+        </div>
+    </a>
+    <a href="projects.html">
+        <div class="nav-entry">
+            Projects
+        </div>
+    </a>
+</div>
+<div class="separator"></div>
+<!-- Main -->
+<div class="main">
+    <!-- Logo -->
+    <div class="title-section">
+        <img class="logo" src="img/upperlevel.png">
+        <div class="title">Upperlevel</div>
+        <div class="motto">Software of an higher level.</div>
+    </div>
+    <!-- Developers -->
+    <div class="dev-section">
+        <div class="dev-section-title">The developers:</div>
+        <div id="dev_list" class="dev-list">
+            <script>
+                const devList = document.getElementById("dev_list");
+                httpGet("https://api.github.com/orgs/upperlevel/members", function (resp) {
+                    var obj = JSON.parse(resp);
+                    for (var i = 0; i < obj.length; i++) {
+                        const devEntry = document.createElement("div");
+                        devEntry.className = "dev-entry";
+                        devList.appendChild(devEntry);
+
+                        const devAvatar = document.createElement("img");
+                        devAvatar.className = "dev-avatar";
+                        devAvatar.src = obj[i].avatar_url;
+                        devEntry.appendChild(devAvatar);
+
+                        const devName = document.createElement("div");
+                        devName.className = "dev-name";
+                        devName.innerHTML = obj[i].login;
+                        devEntry.appendChild(devName);
+                    }
+                });
+                var http = new XMLHttpRequest();
+                http.open("GET", "", true);
+                http.send();
+            </script>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<div class="footer">
+    <div class="separator"></div>
+    <!-- Contacts title -->
+    <div class="contacts-title">
+        Get in touch with us here:
+    </div>
+    <!-- Contacts list -->
+    <div class="contacts-list">
+        <!-- Github -->
+        <a href="https://www.github.com/upperlevel" target="_blank">
+            <div class="contact">
+                <img class="contact-avatar" src="img/social/github.png">
+            </div>
+        </a>
+        <!-- Gitlab -->
+        <a href="https://www.gitlab.com/upperlevel" target="_blank">
+            <div class="contact">
+                <img class="contact-avatar" src="img/social/gitlab.png">
+            </div>
+        </a>
+        <!-- Spigot -->
+        <a href="https://www.spigotmc.org/members/upperlevel.315283/" target="_blank">
+            <div class="contact">
+                <img class="contact-avatar" src="img/social/spigot.png">
+            </div>
         </a>
     </div>
-    <div class="separator"></div>
-    <!-- main -->
-    <div class="main">
-        <!-- title -->
-        <div class="title_section">
-            <img class="logo" src="img/upperlevel.png">
-            <div class="title">UPPERLEVEL</div>
-            <div class="motto">Softwares of an higher level.</div>
-        </div>
-        <!-- dev -->
-        <div class="dev_section">
-            <div class="dev_intro">OUR DEVELOPERS:</div>
-            <div class="dev_list">
-                <!-- SnowyCoder -->
-                <div class="dev">
-                    <img class="dev_avatar" src="img/dev/snowycoder.png">
-                    <div class="dev_desc">SnowyCoder</div>
-                </div>
-                <!-- loryruta -->
-                <div class="dev">
-                    <img class="dev_avatar" src="img/dev/loryruta.png">
-                    <div class="dev_desc">loryruta</div>
-                </div>
-            </div>
-        </div>
+    <!-- Author -->
+    <div class="author">
+        Website made by Upperlevel
     </div>
-    <!-- footer -->
-    <div class="footer">
-        <div class="separator"></div>
-        <!-- contacts_intro -->
-        <div class="contacts_intro">
-            Get in touch with us here:
-        </div>
-        <!-- contacts -->
-        <div class="contacts">
-            <!-- twitter -->
-            <a href="https://twitter.com/upperlevel_dev" target="_parent">
-                <div class="contact">
-                    <img class="contact_avatar" src="img/social/twitter.png">
-                </div>
-            </a>
-            <!-- youtube
-            <a href="https://www.twitter.com/" target="_parent">
-                <div class="contact">
-                    <img class="contact_avatar" src="img/social/youtube.png">
-                </div>
-            </a>
-             -->
-            <!-- github -->
-            <a href="https://www.github.com/upperlevel" target="_parent">
-                <div class="contact">
-                    <img class="contact_avatar" src="img/social/github.png">
-                </div>
-            </a>
-            <!-- gitlab -->
-            <a href="https://www.gitlab.com/upperlevel" target="_parent">
-                <div class="contact">
-                    <img class="contact_avatar" src="img/social/gitlab.png">
-                </div>
-            </a>
-            <!-- spigot -->
-            <a href="https://www.spigotmc.org/members/upperlevel.315283/" target="_parent">
-                <div class="contact">
-                    <img class="contact_avatar" src="img/social/spigot.png">
-                </div>
-            </a>
-        </div>
-        <!-- author -->
-        <div class="author">
-            Website made by Upperlevel
-        </div>
-    </div>
+</div>
 </body>
 </html>
