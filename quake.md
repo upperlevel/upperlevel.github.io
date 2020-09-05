@@ -152,3 +152,49 @@ You can change the default modality and these values in `uppercore.yml`.
 The strong point of Quake is that, as a public plugin, it has been thought to be highly customizable.
 Its main configurations are `config.yml` and `uppercore.yml`, and counts 3200+ lines together.
 
+
+# PlaceholderAPI binding
+
+On enable, Quake registers an extension to PlaceholderAPI that contains a few placeholders:
+* %quake_player_kills%
+* %quake_player_deaths%
+* %quake_player_won_matches%
+* %quake_player_played_matches%
+
+# DB schema
+
+If you're a developer (maybe more if you are a web developer), you may be interested in getting Quake information out of the database.
+
+The DB's job is just to store player information (stats and shop purchases) and consists of one table named `profiles`.
+The profiles' schema goes like that:
+```sql
+CREATE TABLE `profiles` (
+  id VARCHAR(128) PRIMARY KEY
+  name VARCHAR(256) NOT NULL UNIQUE
+
+  kills INT
+  deaths INT
+  won_matches INT
+  played_matches INT
+
+  selected_barrel VARCHAR(1024)
+  selected_case VARCHAR(1024)
+  selected_laser VARCHAR(1024)
+  selected_muzzle VARCHAR(1024)
+  selected_trigger VARCHAR(1024)
+
+  selected_hat VARCHAR(1024)
+  selected_chestplate VARCHAR(1024)
+  selected_leggings VARCHAR(1024)
+  selected_boots VARCHAR(1024)
+
+  selected_kill_sound VARCHAR(1024)
+
+  selected_dash_power VARCHAR(1024)
+  selected_dash_cooldown VARCHAR(1024)
+
+  purchases JSON
+)
+```
+
+The `purchases` field is a JSON array containing the IDs of the purchases bought by the player.
