@@ -2,6 +2,7 @@
 layout: quake
 title: Quake
 description: A Minecraft minigame
+google_analytics: UA-167166159-2
 ---
 
 # Overview
