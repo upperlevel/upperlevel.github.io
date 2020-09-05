@@ -2,6 +2,7 @@
 layout: quake
 title: Quake
 description: A Minecraft minigame
+test_server: "51.77.151.174:5000"
 ---
 
 # Overview
@@ -9,11 +10,14 @@ description: A Minecraft minigame
 Quake is a Spigot minigame developed by Upperlevel (a Github organization of two developers).
 It has been created with Hypixel's Quake in mind and though as a public, highly customizable, porting of it.
 
-### Want a preview of it?
+![preview_0](https://i.imgur.com/3BJwEG3.png)
 
-Join the following Minecraft server, bring at least one friend and start playing!
+![preview_1](https://i.imgur.com/ze7WTiD.png)
 
-QuakeTest -- 51.77.151.174:5000
+![preview_2](https://i.imgur.com/amp7ImS.png)
+
+![preview_3](https://i.imgur.com/oMDAlE2.png)
+Using LeaderHeads
 
 # Features
 
@@ -26,6 +30,11 @@ Follows an overall list of its features:
 * In-game shop permits to decorate: gun, armor, dash and kill sound.
 * [LeaderHeads](https://www.spigotmc.org/resources/leaderheads.2079/) support through PlaceholderAPI.
 * Several ways to join arenas: command, signs and join-gui.
+
+# Try it
+Connect to the following Minecraft server, bring at least one friend, and start playing!
+
+* **51.77.151.174:5000**
 
 # Usage
 
