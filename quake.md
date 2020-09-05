@@ -2,7 +2,6 @@
 layout: quake
 title: Quake
 description: A Minecraft minigame
-test_server: "51.77.151.174:5000"
 ---
 
 # Overview
@@ -34,7 +33,7 @@ Follows an overall list of its features:
 # Try it
 Connect to the following Minecraft server, bring at least one friend, and start playing!
 
-* **51.77.151.174:5000**
+* **51.77.151.174:25600**
 
 # Usage
 
