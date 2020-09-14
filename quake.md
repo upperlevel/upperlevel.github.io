@@ -51,7 +51,7 @@ Keep in mind the required dependencies, that are:
 The arena setup consists of a series of commands that permits Quake to know where and how it has to interact
 with your maps. You may use the following sequence every time you need to create a new map.
 
-* `/q create %arena_name%`
+* `/q create <arena_name>`
   
   This command will create an empty world named Quake.%arena_name% where the arena should be created.
   You can either create the map from scratch or paste the map's schematic.
@@ -72,7 +72,7 @@ with your maps. You may use the following sequence every time you need to create
 
   *You can run this command as much as you need.*
 
-* `/q addpowerup %effect_name% %respawn_ticks%`
+* `/q addpowerup <effect_name> <respawn_ticks>`
 
   Add a powerup at the player's standing location.
   %effect_name% is the name of the powerup to add (see the Powerups section).
@@ -80,16 +80,20 @@ with your maps. You may use the following sequence every time you need to create
   
   *You can run this command as much as you need.*
 
-* `/q setlimits %min_players% %max_players%`
+* `/q setlimits <min_players> <max_players>`
 
   Tells the limits for the current arena, that is, the %min_players% for the lobby countdown to start.
   And the %max_players% that can be held within the arena.
 
-* `/q info %arena_name%`
+* `/q setkillstowin <kills_to_win>`
+
+  Sets the kills that a player has to do in order to win the match.
+
+* `/q info <arena_name>`
 
   Running this command will tell you if you have something left to set before saving or enabling the arena.
 
-* `/q save %arena_name%`
+* `/q save <arena_name>`
 
   Once you've set your arena (buildings and config), **saving it is important and required**.
 
@@ -156,10 +160,12 @@ Its main configurations are `config.yml` and `uppercore.yml`, and counts 3200+ l
 # PlaceholderAPI binding
 
 On enable, Quake registers an extension to PlaceholderAPI that contains a few placeholders:
-* %quake_player_kills%
-* %quake_player_deaths%
-* %quake_player_won_matches%
-* %quake_player_played_matches%
+* `%quake_player_kills%`
+* `%quake_player_deaths%`
+* `%quake_player_won_matches%`
+* `%quake_player_played_matches%`
+* `%quake_player_kd_ratio%` - A value calculated as kills / deaths.
+* `%quake_player_win_ratio%` - A value calculated as won / lost matches.
 
 # DB schema
 
