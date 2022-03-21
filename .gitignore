@@ -25,3 +25,5 @@ coverage
 gh-pages/
 pkg/
 test/
+
+.idea
